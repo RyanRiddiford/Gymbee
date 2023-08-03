@@ -1,0 +1,189 @@
+/*
+        EXERCISE GUIDE RESULTS STYLING
+*/
+
+/*Load more guides progress bar styling*/
+.load-more-prog-bar {
+    width: 75%;
+    --height: 50px;
+    --track-color: #EEEEEE;
+    --indicator-color: #0c2d48;
+    align-self: center;
+    margin-top: 10px;
+}
+
+/*Styling for the load more guides button*/
+#load-more-btn {
+    width: 150px;
+    height: 50px;
+    align-self: center;
+    padding: 10px;
+    border: solid 3px #0c2d48;
+    color: #0c2d48;
+    background-color: rgba(46, 139, 192, 0.51);
+    font-weight: 900;
+    font-size: 1.6rem;
+    margin-top: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+    /*Lower the element's brightness to 40%*/
+    .selected-listing, .exercise-listing-active, .exercise-listing:hover, #load-more-btn:hover {
+        filter: brightness(40%);
+    }
+
+/*Styling for the guide listings container*/
+#guide-listings {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(20, 93, 160, 0.2);
+}
+
+/*Styling for the container holding guide results and the load more button*/
+#list-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+/*Styling for an exercise listing*/
+.exercise-listing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s linear 0.1s 1 forwards;
+}
+
+/*Styling for an exercise listing's image*/
+.exercise-listing-img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-size: 100% 100%;
+    border: 3px solid #0c2d48;
+}
+
+/*Styling for an exercise listing's text*/
+.exercise-listing-text {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    padding-top: 2px;
+    background-color: #EEEEEE;
+    border: 3px solid #0c2d48;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/*
+   SMALLER VIEWPORT STYLING
+*/
+@media (max-width:1023px) {
+
+    /*Display the guides results section as a block element*/
+    #exercise-guides {
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+    }
+
+    /*Styling for the guide listings container*/
+    #guide-listings {
+        width: 100vw;
+    }
+
+    /*Style the exercise listings into a dynamic grid layout*/
+    #exercise-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 150px);
+        justify-content: space-evenly;
+        row-gap: 20px;
+        width: 100vw;
+    }
+
+    /*Styling for an exercise listing*/
+    .exercise-listing {
+        height: auto;
+    }
+
+    /*Styling for the exercise listing image*/
+    .exercise-listing-img {
+        height: 100px;
+        width: 150px;
+    }
+
+    /*Styling for the exercise listing text*/
+    .exercise-listing-text {
+        height: 50px;
+        width: 150px;
+    }
+}
+
+/*
+   LARGER VIEWPORT STYLING
+*/
+@media (min-width:1024px) {
+
+    /*Style the guides results section as a flexbox with full page width*/
+    #exercise-guides {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100vw;
+    }
+
+    /*Styling for the guide listings container*/
+    #guide-listings {
+        border-right: 1px solid #0c2d48;
+        height: 90vh;
+    }
+
+    /*Styling for the container holding guide results and the load more button*/
+    #list-button-container {
+        width: 50vw;
+        overflow-y: scroll;
+    }
+
+    /*Style the exercise listings into a dynamic grid layout*/
+    #exercise-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 200px);
+        justify-content: space-evenly;
+    }
+
+    /*Styling for an exercise listing*/
+    .exercise-listing {
+        height: 200px;
+        margin: 10px;
+    }
+
+    /*Styling for the exercise listing image*/
+    .exercise-listing-img {
+        height: 160px;
+        width: 200px;
+    }
+
+    /*Styling for the exercise listing text*/
+    .exercise-listing-text {
+        height: 40px;
+        width: 200px;
+    }
+
+    /*Add border between the guide listings and the guide listings header*/
+    #list-button-container {
+        border-top: 5px solid #0c2d48;
+    }
+}
+
+/*
+    HIGH RESOLUTION VIEWPORT STYLING
+*/
+@media (min-width:2000px) {
+    #list-button-container {
+        width: 65vw;
+    }
+}

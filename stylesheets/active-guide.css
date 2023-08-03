@@ -1,0 +1,345 @@
+/*
+   ACTIVE GUIDE STYLING
+*/
+
+/*Start off with the expanded visual dialog being hidden*/
+#expanded-visual-demo-popup::part(header), #expanded-visual-demo-popup::part(title), #expanded-visual-demo-popup::part(footer) {
+    display: none;
+}
+
+/*Style the tab group for the active guide*/
+.selected-exercise-bot {
+    background-color: #eeeeee;
+    border-radius: 10px;
+    border: 1px solid #0c2d48;
+}
+
+/*Style the expanded visual dialog panel*/
+#expanded-visual-demo-popup::part(panel) {
+    background: none;
+    width: 400px;
+    height: 400px;
+}
+
+/*Style the expanded visual dialog body*/
+#expanded-visual-demo-popup::part(body) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*Hide unintended scrolling on X and Y axis*/
+    overflow: hidden;
+}
+
+/*Set the expanded visual dialog overlay's color and opacity*/
+#expanded-visual-demo-popup::part(overlay) {
+    background: rgba(0,0,0,0.8);
+}
+
+/*Styling for the active guide loading progress bar*/
+.active-guide-prog-bar {
+    width: 75%;
+    --height: 50px;
+    --track-color: #EEEEEE;
+    --indicator-color: #0c2d48;
+    align-self: center;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+/*Font styling for the active guide tab group's tab text*/
+.active-guide-tab span {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/*Make attribute headers bolder in weight*/
+.attribute-header {
+    font-weight: 800;
+}
+
+/*Style the attribute list container*/
+.attribute-list {
+    height: fit-content;
+    background: #EEEEEE;
+    box-shadow: 0px 0px 15px 15px #444444;
+    padding: 10px;
+}
+
+    /*Add bottom border to atribute list container heading*/
+    .attribute-list > h3 {
+        border-bottom: 1px solid #0c2d48;
+    }
+
+/*Space apart each attribute list content*/
+.active-guide-attribute {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+/*Style the selected exercise visual image*/
+.selected-exercise-visual {
+    height: 200px;
+    width: 200px;
+    background-size: 100% 100%;
+    border: 2px solid #0c2d48;
+    border-radius: 10px;
+}
+
+/*Lower the brightness of the selected exercise visual inside the active guide popup or split panel to 40%*/
+#active-guide-popup .selected-exercise-visual:hover, #active-guide .selected-exercise-visual:hover {
+    filter: brightness(40%);
+}
+
+/*Style the selected exercise steps and tips and warnings sections*/
+.selected-exercise-steps, .selected-exercise-tips-warnings {
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    padding-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 0.5s linear 0.1s 1 forwards;
+}
+
+/*Style the previous and next buttons for the exercise visual slideshow*/
+.left-control, .right-control {
+    border: solid 2px #0c2d48;
+    color: #0c2d48;
+    background-color: rgba(46, 139, 192, 0.51);
+    font-weight: 600;
+    font-size: 1.3rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/*Style the container holding the next and previous buttons*/
+.slider-control-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+/*Style the exercise slider container that holds the visual and the next/previous buttons*/
+.exercise-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*
+   SMALLER VIEWPORT STYLING
+*/
+@media (max-width:1023px) {
+
+    /*Hide the container for displaying the active guide for large viewports*/
+    #active-guide {
+        display: none;
+    }
+
+    /*Tab text styling for activ guide*/
+    .active-guide-tab span {
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
+
+    /*Style the active guide dialog content container*/
+    #active-guide-popup::part(body) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        min-width: 300px;
+        width: 700px;
+        max-height: 1000px;
+    }
+
+    /*Style the active guide popup panel*/
+    #active-guide-popup::part(panel) {
+        z-index: 5;
+        min-width: 300px;
+        width: 700px;
+        background-color: #D0DFEC;
+        border-radius: 25px;
+        border: 2px solid #0c2d48;
+    }
+
+    /*Style the active guide popup overlay*/
+    #active-guide-popup::part(overlay) {
+        background: rgb(0, 0, 0, 0.8);
+    }
+
+    /*Hide the active guide close button, header, and title*/
+    #active-guide-popup::part(close-button), #active-guide-popup::part(header), #active-guide-popup::part(title) {
+        display: none;
+    }
+
+    /*Style the active guide popup footer*/
+    #active-guide-popup::part(footer) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 50px;
+        padding: 0;
+        margin: 0;
+    }
+
+    /*Style the active guide popup close button*/
+    .guide-popup-close-btn::part(base) {
+        border-top: solid 1px #0c2d48;
+        width: 100%;
+        height: 50px;
+        margin-top: 10px;
+        color: #0c2d48;
+        background-color: #C54E57;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        font-weight: 800;
+        font-size: 1.6rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    /*Style the top part of the active guide popup content*/
+    .selected-exercise-top {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /*Set the width of the active guide popup tab group's body and nav parts*/
+    .selected-exercise-bot::part(body), .selected-exercise-bot::part(nav) {
+        width: 350px;
+    }
+
+    /*Set tab group nav max width to width of all its content*/
+    .selected-exercise-bot::part(nav) {
+        max-width: fit-content;
+    }
+
+    /*Align the base of the active guide popup's tab group*/
+    .selected-exercise-bot::part(base) {
+        align-items: center;
+    }
+
+    /*Style the attribute list container*/
+    .attribute-list {
+        width: 200px;
+        margin: 10px 10px 20px 10px;
+    }
+
+    /*Add padding for the steps and tips and warnings text content*/
+    .selected-exercise-steps, .selected-exercise-tips-warnings {
+        padding: 0px 30px 30px 30px;
+    }
+
+    /*Style the exercise slider container that holds the visual and the next/previous buttons*/
+    .exercise-slider {
+        height: 280px;
+        width: 200px;
+    }
+    /*Style the container holding the next and previous buttons*/
+    .slider-control-container {
+        height: 70px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /*Slider control buttons styling*/
+    .left-control, .right-control {
+        width: 80px;
+        height: 30px;
+    }
+}
+
+/*
+   LARGER VIEWPORT STYLING
+*/
+@media (min-width:1024px) {
+
+    /*Styling for the active guide container for larger viewports*/
+    #active-guide {
+        background-color: rgba(20, 93, 160, 0.2);
+        width: 50vw;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+    }
+
+    /*Style the active guide's heading*/
+    .selected-exercise-header {
+        padding-bottom: 5%;
+    }
+
+    /*Tab text styling for activ guide*/
+    .active-guide-tab span {
+        font-size: 1.8rem;
+        font-weight: 800;
+    }
+
+    /*Style the top part of the active guide container*/
+    .selected-exercise-top {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 50px;
+    }
+
+    /*Style the attribute list container*/
+    .attribute-list {
+        width: 150px;
+        margin: 0px 30px 0px 30px;
+    }
+
+    /*Style the selected exercise steps and tips and warnings sections*/
+    .selected-exercise-steps, .selected-exercise-tips-warnings {
+        width: 40vw;
+        overflow-y: auto;
+    }
+
+    /*Style the exercise slider container that holds the visual and the next/previous buttons*/
+    .exercise-slider {
+        height: 250px;
+        width: 250px;
+        margin: 0px 30px 0px 30px;
+    }
+
+    /*Style the container holding the next and previous buttons*/
+    .slider-control-container {
+        height: 50px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /*Slider control buttons styling*/
+    .left-control, .right-control {
+        padding: 5px;
+        width: 80px;
+        height: 40px;
+    }
+
+    /*Create a gap between the slider control buttons by adding a margin to the left button*/
+    .left-control {
+        margin-right: 20px;
+    }
+
+    /*Align the bottom part of the active guide container*/
+    .selected-exercise-bot::part(base) {
+        align-items: center;
+    }
+}
+
+/*
+    HIGH RESOLUTION VIEWPORT STYLING
+*/
+@media (min-width:2000px) {
+    #active-guide {
+        width: 35vw;
+    }
+    /*Style the selected exercise steps and tips and warnings sections*/
+    .selected-exercise-steps, .selected-exercise-tips-warnings {
+        width: 25vw;
+    }
+}

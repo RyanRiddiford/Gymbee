@@ -1,0 +1,111 @@
+/*
+    FILTER OPTIONS STYLING
+*/
+
+/*Style the filter options section*/
+#filter-options {
+    background-color: rgba(20, 93, 160, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid #0c2d48;
+    width: 100vw;
+    border-bottom: 2px solid #0c2d48;
+}
+
+/*Style the filter search button*/
+#filter-btn {
+    background-color: rgba(112,112,112,0.5);
+    font-weight: bolder;
+    color: #0c2d48;
+    border: 1px solid #0c2d48;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/*Style the keywords component label*/
+.label-on-left::part(form-control-label) {
+    flex: 0 0 auto;
+    text-align: right;
+}
+
+/*Styke the keywords component*/
+#keyword-input::part(form-control) {
+    display: flex;
+    align-items: center;
+}
+
+/*Style the keywords component input*/
+#keyword-input::part(form-control-input) {
+    border-left: 1px solid #0c2d48;
+    border-top: 1px solid #0c2d48;
+    border-bottom: 1px solid #0c2d48;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/*Style the top part of the filter options*/
+#filter-top {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    margin: 20px;
+    justify-content: center;
+}
+
+/*Style the bottom part of the filter options*/
+#filter-bottom {
+    justify-content: space-evenly;
+}
+
+/*
+   SMALLER VIEWPORT STYLING
+*/
+@media (max-width:1023px) {
+
+    /*Style the bottom part of the filter options as a column*/
+    #filter-bottom {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        margin: 20px;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /*Style the filter options select components*/
+    #filter-options sl-select {
+        width: 60%;
+        max-height: 50px;
+    }
+
+    /*Style the keywords component input width*/
+    #keyword-input::part(form-control-input) {
+        min-width: 100px;
+        max-width: 200px;
+    }
+}
+
+/*
+   LARGER VIEWPORT STYLING
+*/
+@media (min-width:1024px) {
+
+    /*Style the bottom part of the filter options as a row*/
+    #filter-bottom {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        margin: 20px;
+    }
+
+    /*Style the filter options select components*/
+    #filter-options sl-select {
+        width: 300px;
+    }
+
+    /*Style the keywords component input width*/
+    #keyword-input::part(form-control-input) {
+        width: 300px;
+    }
+}
