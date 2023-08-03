@@ -1,0 +1,113 @@
+/*
+    ABOUT SECTION STYLING
+*/
+
+/*About section element styling*/
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/Working\ out.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 90vh;
+}
+
+/*Fade in animation for about tab panel*/
+.promotional-panel {
+    opacity: 0;
+    animation: fadeIn 0.5s linear 0.1s 1 forwards;
+}
+
+/*Style the dark overlay that covers the about section background image*/
+#dark-overlay {
+    z-index: 3;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    background-color: #000000;
+    opacity: 0.6;
+}
+
+/*Style the sl tab panels for the about section/promotional*/
+sl-tab-panel.promotional-panel::part(base) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Styling for the promotional button*/
+sl-button.promotional-btn::part(base) {
+    border: solid 3px #0c2d48;
+    width: 200px;
+    height: 50px;
+    color: #0c2d48;
+    background-color: rgba(46, 139, 192, 0.51);
+    font-weight: 900;
+    font-size: 1.6rem;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+}
+
+sl-button.promotional-btn {
+    align-self: center;
+}
+
+/*Set the about tab group's z-index so it is placed over the background image and dark overlay*/
+#about-tab-group {
+    z-index: 4;
+}
+
+    /*Styling for the about tab group*/
+    #about-tab-group::part(base) {
+        padding: 4%;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: 10vh;
+        align-self: center;
+        background-color: #EEEEEE;
+        height: fit-content;
+        font-weight: 800;
+        box-shadow: 0px 0px 15px 15px #EEEEEE;
+    }
+
+/*
+   SMALLER VIEWPORT STYLING
+*/
+@media (max-width:1023px) {
+    /*Styling for the about tab group*/
+    #about-tab-group::part(base) {
+        width: 320px;
+    }
+
+    /*Font styling for the about promotional tab text*/
+    .promotional-tab span {
+        font-size: 1.4rem;
+        font-weight: 800;
+    }
+}
+
+/*
+   LARGER VIEWPORT STYLING
+*/
+@media (min-width:1024px) {
+
+    /*Styling for the about tab group*/
+    #about-tab-group::part(base) {
+        width: 500px;
+    }
+
+    /*Font styling for the about promotional tab text*/
+    .promotional-tab span {
+        font-size: 1.8rem;
+        font-weight: 800;
+    }
+}

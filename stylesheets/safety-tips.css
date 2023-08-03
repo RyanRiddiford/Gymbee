@@ -1,0 +1,94 @@
+/*
+    SAFETY TIPS SECTION STYLING
+*/
+
+/*Styling for the safety tips section*/
+#safety-tips-section {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(12, 45, 72, 0.35);
+    width: 100vw;
+    align-items: center;
+}
+
+/*Styling for the safety tips tab group*/
+#safety-tips-tab-group {
+    width: 95vw;
+    padding: 10px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+
+/*Styling for the safety tips tab group navigation component*/
+sl-tab-group#safety-tips-tab-group::part(nav) {
+    align-self: center;
+    width: fit-content;
+}
+
+/*Set margin to the body of the safety tips tab group's body*/
+sl-tab-group#safety-tips-tab-group::part(body) {
+    margin: 20px;
+}
+
+/*Font styling for the safety tips tab text*/
+.safety-tips-tab span {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/*Fade in animation for safety tips tab panel*/
+.safety-tips-tab-panel {
+    opacity: 0;
+    animation: fadeIn 0.5s linear 0.1s 1 forwards;
+}
+
+/*
+    SMALLER VIEWPORT STYLING
+*/
+@media (max-width:1023px) {
+
+    /*Styling of the safety tips section for the smaller viewport*/
+    #safety-tips-section {
+        height: fit-content;
+        padding-bottom: 200px;
+        text-align: center;
+    }
+
+    /*Scale up the navigation arrows for the tab group*/
+    sl-tab-group#safety-tips-tab-group::part(scroll-button) {
+        transform: scale(3);
+    }
+
+    /*Set the max width of the navigation bar for the tab group*/
+    sl-tab-group#safety-tips-tab-group::part(nav) {
+        max-width: 85vw;
+    }
+}
+
+/*
+    LARGER VIEWPORT STYLING
+*/
+@media (min-width:1024px) {
+
+    /*Styling of the safety tips section for the larger viewport*/
+    #safety-tips-section {
+        height: 60vh;
+    }
+
+    /*Set width and text alignment for the safety tips tab panel*/
+    .safety-tips-tab-panel {
+        width: 600px;
+        text-align: left;
+    }
+
+    /*Set width and padding for the safety tips tab group*/
+    #safety-tips-tab-group {
+        width: fit-content;
+        padding: 10px;
+    }
+
+    /*Align the safety tips tab group body*/
+    sl-tab-group#safety-tips-tab-group::part(body) {
+        align-self: center;
+    }
+}

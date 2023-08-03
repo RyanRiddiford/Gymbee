@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIFTschholar Weightlifting Guides</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!--Link the required stylesheets-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    <link rel="stylesheet" href="/stylesheets/about.css">
+    <link rel="stylesheet" href="/stylesheets/filter-options.css">
+    <link rel="stylesheet" href="/stylesheets/safety-tips.css">
+    <link rel="stylesheet" href="/stylesheets/exercise-listing.css">
+    <link rel="stylesheet" href="/stylesheets/active-guide.css">
+    <!--Link the CDN for the Shoelace library stylesheet-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.78/dist/themes/light.css" />
+</head>
+<body>
+    <!--The background for the promotional button and tab panel-->
+    <div id="white-underlay"></div>
+
+    <!--Site navigation-->
+    <nav>
+
+        <!--Top horizontal navigation for wider viewports-->
+        <div id="top-nav">
+            <!--Top header logo-->
+            <figure>
+                <img data-move-to="home" alt="Lift Scholar Logo" id="top-logo" src="images/Logo.png" height="40" width="40" />
+            </figure>
+            <!--Navigation buttons-->
+            <div id="nav-btn-container">
+                <h3><button data-move-to="home" id="home-btn" class="nav-btn">Home</button></h3>
+                <h3><button data-move-to="filter-options" id="filter-options-btn" class="nav-btn">Guides</button></h3>
+                <h3><button data-move-to="safety-tips-section" id="safety-tips-section-btn" class="nav-btn">Safety Tips</button></h3>
+                <h3><button data-move-to="about" id="about-btn" class="nav-btn">About Us</button></h3>
+            </div>
+        </div>
+
+        <!--Hamburger navigation for narrower viewports-->
+        <div id="side-nav">
+            <!--Top header containing navigation menu toggle and logo-->
+            <div id="side-nav-header">
+                <button id="side-menu-icon-btn">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="82.5" height="60" viewBox="0 0 82.5 60">
+                        <g id="side-menu-icon" data-name="Side Menu Icon" transform="translate(-67 -45)">
+                            <line id="top-line" data-name="Top Line" x2="72" transform="translate(72 50)" fill="none" stroke="#0c2d48" stroke-linecap="round" stroke-width="10" />
+                            <line id="mid-line" data-name="Mid Line" x2="72" transform="translate(72 75)" fill="none" stroke="#0c2d48" stroke-linecap="round" stroke-width="10" />
+                            <line id="bot-line" data-name="Bot Line" x2="72" transform="translate(72 100)" fill="none" stroke="#0c2d48" stroke-linecap="round" stroke-width="10" />
+                        </g>
+                    </svg>
+
+                </button>
+                <figure>
+                    <img data-move-to="home" alt="Lift Scholar Logo" id="side-nav-top-logo" src="images/logo.png" height="40" width="40" />
+                </figure>
+            </div>
+            <!--Navigation buttons-->
+            <div id="side-nav-btn-container">
+                <ul>
+                    <li>
+                        <button data-move-to="home" id="side-home-btn" class="side-nav-btn">Home</button>
+                    </li>
+                    <li>
+                        <button data-move-to="filter-options" id="side-filter-options-btn" class="side-nav-btn">Guides</button>
+                    </li>
+                    <li>
+                        <button data-move-to="safety-tips-section" id="side-safety-tips-section-btn" class="side-nav-btn">Safety Tips</button>
+                    </li>
+                    <li>
+                        <button data-move-to="about" id="side-about-btn" class="side-nav-btn">About Us</button>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!--About section and Gymbee promotion-->
+    <div id="about">
+        <!--Dark overlay covering the background image-->
+        <div id="dark-overlay"></div>
+        <!--The tab panel group for about information and Gymbee promotional material-->
+        <sl-tab-group id="about-tab-group">
+            <sl-tab class="promotional-tab" slot="nav" panel="gymbee"><span>What is Gymbee?</span></sl-tab>
+            <sl-tab class="promotional-tab" slot="nav" panel="liftscholar"><span>What is LIFTScholar?</span></sl-tab>
+            <sl-tab-panel class="promotional-panel" name="gymbee">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus ipsum et vestibulum gravida. Sed hendrerit bibendum lectus, eu euismod nisl volutpat eu. Aliquam eget iaculis elit, et porta tellus.
+                </p>
+                <sl-button class="promotional-btn" id="gymbee-promotional-btn">JOIN GYMBEE TODAY</sl-button>
+            </sl-tab-panel>
+            <sl-tab-panel class="promotional-panel" name="liftscholar">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus ipsum et vestibulum gravida. Sed hendrerit bibendum lectus, eu euismod nisl volutpat eu. Aliquam eget iaculis elit, et porta tellus.
+                </p>
+                <sl-button class="promotional-btn" data-move-to="filter-options" id="guides-promotion-btn">EXPLORE OUR GUIDES</sl-button>
+            </sl-tab-panel>
+        </sl-tab-group>
+    </div>
+
+    <!--General safety tips-->
+    <section id="safety-tips-section">
+        <h1>Safety Tips for Lifting Weights</h1>
+    </section>
+
+    <!--Filter list for exercise guides-->
+    <section id="filter-options">
+        <h1>Search For Exercise Guides</h1>
+        <!--Contains the keyword input filter-->
+        <div id="filter-top">
+            <sl-input id="keyword-input" label="Keywords: " type="text"></sl-input>
+            <!--Placebo search button for filter options-->
+            <button id="filter-btn" type="submit">Search</button>
+        </div>
+        <!--Contains multi-select input filters-->
+        <div id="filter-bottom">
+            <!--Multiselect shoelace component for muscle groups-->
+            <sl-select label="Muscle Groups" id="muscle-groups-select" placeholder="Muscle Groups" multiple clearable>
+                <sl-menu-label>Upper Body</sl-menu-label>
+                <sl-menu-item value="Chest">Chest</sl-menu-item>
+                <sl-menu-item value="Triceps">Triceps</sl-menu-item>
+                <sl-menu-item value="Biceps">Biceps</sl-menu-item>
+                <sl-menu-item value="Upper Back">Upper Back</sl-menu-item>
+                <sl-menu-item value="Shoulders">Shoulders</sl-menu-item>
+                <sl-menu-item value="Core">Core</sl-menu-item>
+                <sl-menu-item value="Forearms">Forearms</sl-menu-item>
+                <sl-divider></sl-divider>
+                <sl-menu-label>Lower Body</sl-menu-label>
+                <sl-menu-item value="Hamstrings">Hamstrings</sl-menu-item>
+                <sl-menu-item value="Quadriceps">Quadriceps</sl-menu-item>
+                <sl-menu-item value="Glutes">Glutes</sl-menu-item>
+                <sl-menu-item value="Calves">Calves</sl-menu-item>
+                <sl-menu-item value="Lower Back">Lower Back</sl-menu-item>
+                <sl-menu-item value="Hip Flexors">Hip Flexors</sl-menu-item>
+            </sl-select>
+            <!--Multiselect shoelace component for equipment-->
+            <sl-select label="Equipment" id="equipment-select" placeholder="Equipment" multiple clearable>
+                <sl-menu-item value="Barbell">Barbell</sl-menu-item>
+                <sl-menu-item value="Bench">Bench</sl-menu-item>
+                <sl-menu-item value="Dumbbell">Dumbbell</sl-menu-item>
+                <sl-menu-item value="Dip Bars">Dip Bars</sl-menu-item>
+                <sl-menu-item value="Cable Pulley Station">Cable Pulley Station</sl-menu-item>
+                <sl-menu-item value="None">None</sl-menu-item>
+                <sl-menu-item value="Kettlebell">Kettlebell</sl-menu-item>
+                <sl-menu-item value="Pullup Bar">Pullup bar</sl-menu-item>
+                <sl-menu-item value="Squat Rack">Squat Rack</sl-menu-item>
+            </sl-select>
+            <!--Multiselect shoelace component for difficulty-->
+            <sl-select label="Difficulty" id="difficulty-select" placeholder="Difficulty" multiple clearable>
+                <sl-menu-item value="Beginner">Beginner</sl-menu-item>
+                <sl-menu-item value="Novice">Novice</sl-menu-item>
+                <sl-menu-item value="Intermediate">Intermediate</sl-menu-item>
+                <sl-menu-item value="Advanced">Advanced</sl-menu-item>
+            </sl-select>
+        </div>
+    </section>
+
+    <!--Exercise guide listings and selected exercise guide-->
+    <section id="exercise-guides">
+        <!--Container for guide listings, load more button, and the heading-->
+        <div id="guide-listings">
+            <h2>Results</h2>
+            <!--Container for the guide listings and load more button-->
+            <div id="list-button-container">
+                <!--Container for the guide listings-->
+                <div id="exercise-list">
+                </div>
+            </div>
+        </div>
+        <!--Container for the active guide for larger viewports-->
+        <div id="active-guide">
+            <h2>Select An Exercise Guide</h2>
+        </div>
+        <!--Dialog for the active guide popup for smaller viewports-->
+        <sl-dialog id="active-guide-popup">
+        </sl-dialog>
+        <!--Dialog for the expanded visual demo image popup-->
+        <sl-dialog id="expanded-visual-demo-popup">
+        </sl-dialog>
+    </section>
+
+    <!--Load CDN for animejs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--Load CDN for Shoelace library minified script-->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.78/dist/shoelace.min.js"></script>
+    <!--Handles the initial executions on body load and sets up core events and animations-->
+    <script src="/main.js" type="module"></script>
+</body>
+</html>

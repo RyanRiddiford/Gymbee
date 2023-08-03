@@ -1,0 +1,116 @@
+/*Document level styling*/
+html {
+    /*Set default font size*/
+    font-size: 10px;
+    /*Set scroll behaviour to smooth so scrolling on click is smooth and not snappy*/
+    scroll-behavior: smooth;
+    width: 100vw;
+}
+
+/*Body level styling*/
+body {
+    /*Rezero the margin and padding*/
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    background-color: #FFFFFF;
+    color: #0c2d48;
+    /*Pad the top by the fixed-positioned header's height so they don't overlap */
+    padding-top: 100px;
+}
+
+/*Rezero button border and background. Set font-size.*/
+button {
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+}
+
+/*Only display the contents inside the figure element*/
+figure {
+    display: contents;
+}
+
+/*H1 styling*/
+h1 {
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+    font-size: 4rem;
+}
+
+/*H2 styling*/
+h2 {
+    margin: 7px 0px 7px 0px;
+    text-align: center;
+    font-size: 3.5rem;
+}
+
+/*H3 styling*/
+h3 {
+    margin: 5px 0px 5px 0px;
+    text-align: left;
+    font-size: 2.9rem;
+}
+
+/*Font styling for other elements*/
+p, div, ol li, ul li {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+/*Make the marker used (e.g. 1., 2.) bolder in font weight*/
+ol > li::marker {
+    font-weight: 900;
+}
+
+/*Space apart li elements vertically*/
+li {
+    margin-bottom: 5px;
+}
+
+/*Font styling for filter options input and labels*/
+#keyword-input::part(form-control-label), sl-select::part(control), sl-select::part(form-control-label), sl-menu-label::part(base), sl-menu-item::part(base) {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+/*Stops the header bar from covering part of these sections when scrolled via navigation buttons*/
+#filter-options, #safety-tips-section {
+    scroll-margin-top: 100px;
+}
+
+/*Lower brightness of buttons when hovered over*/
+.promotional-btn:hover, #left-control:hover, #right-control:hover, #guides-promotion-btn:hover, .left-control:hover, .right-control:hover, .guide-popup-close-btn:hover {
+    filter: brightness(50%);
+}
+
+/*Fade in animation*/
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    20% {
+        opacity: 0.2
+    }
+
+    40% {
+        opacity: 0.4
+    }
+
+    60% {
+        opacity: 0.6
+    }
+
+    80% {
+        opacity: 0.8
+    }
+
+    100% {
+        opacity: 1
+    }
+}
